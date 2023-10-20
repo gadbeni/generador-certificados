@@ -739,6 +739,22 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
+            45 => 
+            array (
+                'add' => 1,
+                'browse' => 0,
+                'data_type_id' => 10,
+                'delete' => 1,
+                'details' => '{"model":"App\\\\Models\\\\Person","table":"people","type":"belongsToMany","column":"id","key":"id","label":"first_name","pivot_table":"course_person","pivot":"1","taggable":"0"}',
+                'display_name' => 'people',
+                'edit' => 1,
+                'field' => 'course_belongstomany_person_relationship',
+                'id' => 57,
+                'order' => 13,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'relationship',
+            ),
         ));
         
         

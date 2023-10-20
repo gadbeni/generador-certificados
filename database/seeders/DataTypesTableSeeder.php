@@ -93,7 +93,7 @@ class DataTypesTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'controller' => NULL,
+                'controller' => '\\App\\Http\\Controllers\\Voyager\\CourseController',
                 'created_at' => '2023-10-20 13:49:40',
                 'description' => NULL,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
@@ -107,7 +107,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'courses',
-                'updated_at' => '2023-10-20 14:23:21',
+                'updated_at' => '2023-10-20 20:30:49',
             ),
         ));
         
