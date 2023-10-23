@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('first_name')->required();
             $table->string('last_name')->required();
-            $table->string('ci');
+            $table->string('ci')->required();
             $table->string('email');
-            $table->string('phone_number')->required();
+            $table->string('phone_number');
             $table->date('date_of_birth');
             $table->text('addres');
             $table->timestamps();

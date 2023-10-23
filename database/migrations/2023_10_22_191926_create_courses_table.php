@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('img_certificate')->nullable();
             $table->integer('x')->nullable();
             $table->integer('y')->nullable();
+            $table->integer('font_size')->nullable();
             $table->timestamps();
             $table->softDeletes();
             

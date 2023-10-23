@@ -24,9 +24,9 @@ Route::group(['prefix' => 'admin'], function () {
     
     //<- certificados
     Route::controller(CourseController::class)->group(function(){
-        Route::get('course/{id_course}/certificate/','formCertificate')->name('form_certificate');
-        Route::put('course/{id_course}/add-certificate/','addCertificate')->name('add_certificate');
-        Route::get('course/{id_course}/certificate/{id_person}','showCertificate')->name('show_certificate');
+        Route::get('courses/{id_course}/certificate/','formCertificate')->name('form_certificate');
+        Route::put('courses/{id_course}/add-certificate/','addCertificate')->name('add_certificate');
+        Route::get('courses/{id_course}/certificate/{id_person}','showCertificate')->name('show_certificate');
     });
     
     // certificados->
