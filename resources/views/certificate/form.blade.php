@@ -17,18 +17,20 @@
             <div class="panel-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <form action="">
+                        <form action="{{route('add_certificate', $course->id)}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
                             <div class="form-group col-md-12">
                                 <label for="image">Selecciona una imagen:</label>
                                 <input type="file" name="image" id="image" accept="image/*">
                             </div>
                             <div class="form-group col-sm-6">
-                                <label for="range-x">Eje X:</label>
-                                <input type="range" name="range-x" id="range-x" class="" min="0" max="1000" step="1" value="0">
+                                <label for="range_x">Eje X:</label>
+                                <input type="range" name="range_x" id="range_x" class="" min="0" max="1000" step="1" value="0">
                             </div>
                             <div class="form-group col-sm-6">
-                                <label for="range-y">Eje Y:</label>
-                                <input type="range" name="range-y" id="range-y" class="l" min="0" max="1000" step="1" value="0">
+                                <label for="range_y">Eje Y:</label>
+                                <input type="range" name="range_y" id="range_y" class="l" min="0" max="720" step="1" value="0">
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
@@ -39,18 +41,37 @@
         <div class="panel">
             
         </div>
-        <div class="container-certificate" id="container-certificate">
-                <div id="movable-div">Hello World</div>
+        <div class="table-responsive">
+            <div class="container-certificate" id="container-certificate">
+                <div id="movable-div">Nombre De Ejemplo</div>
             </div>
+        </div>
+        @foreach ($course->students as $student)
+            <p>{{ $student->first_name }} {{ $student->last_name }}
+                <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $student->id]) }}">Ver certificado</a>
+            </p>
+        @endforeach
+        
     </div>
 @endsection
 @section('css')
     <style>
-        .container-certificate {
+        /* .container-certificate {
             position: relative;
             width: 200px;
             height: 100px;
             background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+        .container-certificate {
+            position: relative;
+            width: 297mm; /* Ancho de una hoja A4 horizontal */ 
+            height: 210mm; /* Altura de una hoja A4 horizontal*/ 
+            background-image: none; /* Por defecto sin imagen de fondo */
+            background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+            background-position: center center; /* Centra la imagen en el contenedor */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,6 +80,9 @@
             position: absolute;
             top: 0;
             left: 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
         }
     </style>
 
@@ -72,8 +96,8 @@
         const xInput = document.getElementById("eje_x");
         const yInput = document.getElementById("eje_y");
 
-        const rangeX = document.getElementById("range-x");
-        const rangeY = document.getElementById("range-y");
+        const rangeX = document.getElementById("range_x");
+        const rangeY = document.getElementById("range_y");
         const movableDiv = document.getElementById("movable-div");
 
         const container = document.getElementById("container-certificate")
