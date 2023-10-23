@@ -755,6 +755,22 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'relationship',
             ),
+            46 => 
+            array (
+                'add' => 1,
+                'browse' => 0,
+                'data_type_id' => 10,
+                'delete' => 0,
+                'details' => '{}',
+                'display_name' => 'Tamaño Letra',
+                'edit' => 1,
+                'field' => 'font_size',
+                'id' => 58,
+                'order' => 10,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'number',
+            ),
         ));
         
         
