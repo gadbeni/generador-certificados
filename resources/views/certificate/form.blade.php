@@ -11,12 +11,9 @@
         <button class="btn btn-primary" id="btn_ajustar">Ajustar Nombre</button>
     </div>
     <div class="container-fluid">
-        <div class="panel" >
-            
-        </div>
-        <div class="panel panel-bordered" id="panel_parent">
+        <div class="panel panel-bordered hidden" id="panel_parent">
             <div class="panel-heading" id="container-pre">
-                <div class="table-responsive">
+                <div class="table-responsive scale-edit">
                     <div class="container-certificate" id="container-certificate">
                         @if ($course->img_certificate)
                         <img src="{{asset("storage/"."$course->img_certificate")}}" alt="">
@@ -65,21 +62,44 @@
         </div>
         <div class="panel">
         </div>
-        
-        @foreach ($course->students as $student)
-            <p>{{ $student->first_name }} {{ $student->last_name }}
-                <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $student->id]) }}">Ver certificado</a>
-            </p>
-        @endforeach
-        
+        <div class="panel">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="dataTable" class="table table-hover dataTable" role="grid" aria-describedby="dataTable_info">
+                        <thead>
+                            <tr class="">
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>CI</th>
+                                <th>Certificado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($course->students as $student)
+                            <tr role="row" class="odd">
+                                <td>{{ $student->first_name }}</td>
+                                <td>{{ $student->last_name }}</td>
+                                <td>{{ $student->ci }}</td>
+                                <td>
+                                    <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $student->id]) }}" class="btn btn-primary">
+                                        <i class="voyager-certificate"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    
+                </div>                
+            </div>
+        </div>
     </div>
 @endsection
 @section('css')
     <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
-        @foreach($fonts as $font)
-            @import url({{$font->font_url}});
-        @endforeach
+        /* @foreach($fonts as $font)*/
+            @import url({{$font->font_url}}); /*Mucho cuidado es foreach sigue funcionado, por que esta con el comentario css y no con el de blade, es para mi comodidad visual*/
+        /*@endforeach */
         /* .container-certificate {
             position: relative;
             width: 200px;
@@ -93,12 +113,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100mm;
+            height: 110mm;
         }
-        .table-responsive{
+        .scale-edit{
             /* transform: scale(0.5); */
             scale: 0.5;
-            top: 0;
         }
         .container-certificate {
             position: relative;
@@ -179,7 +198,7 @@
             }
         }
         function togglePanel(){
-            
+            panelParent.classList.toggle("hidden");
         }
 
         function updatePositionX() {

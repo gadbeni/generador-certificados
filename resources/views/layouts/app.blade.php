@@ -7,14 +7,49 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
+      <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{asset("vendor/aos/aos.css")}}" rel="stylesheet">
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    {{-- color #098429 --}}
 </head>
 <body class="bg-gray-100">
-    <header class="container-fluid">
-        @yield('header')
-    </header>
+    {{-- Header --}}
+    @include('layouts.header')
+    
     <!-- Content -->
-    <div class="">
+    <main class="">
         @yield('content')
-    </div>
+    </main>
+
+    {{-- Footer --}}
+    @include('layouts.footer')
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="{{asset('vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{asset('vendor/aos/aos.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{asset('vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('vendor/php-email-form/validate.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

@@ -1,74 +1,111 @@
 @extends('layouts.app')
 
-@section('header')
-<nav class="bg-white py-4">
-    <div class="container mx-auto flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-            <img src="tu_logo.png" alt="Logo" class="h-8 w-8">
-            <span class="text-xl font-semibold text-green-500">SysCertificate</span>
-        </div>
-        <div class="lg:flex items-center space-x-4 hidden">
-            <a href="" class="text-gray-600 hover:text-green-500">Home</a>
-            <a href="" class="text-gray-600 hover:text-green-500">About</a>
-            <a href="" class="text-gray-600 hover:text-green-500">Admin</a>
-            <div class="border-l h-6 border-gray-300"></div>
-            <a href="#" class="text-gray-500 hover:text-green-500">
-                <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="#" class="text-gray-500 hover:text-green-500">
-                <i class="fab fa-whatsapp fa-2x"></i>
-            </a>
-        </div>
-        <div class="lg:hidden">
-            <!-- Agregar un botón para abrir el menú en dispositivos móviles -->
-            <button id="mobile-menu-button" class="text-gray-600 hover:text-green-500">
-                <i class="fas fa-bars fa-2x"></i>
-            </button>
-        </div>
-    </div>
-</nav>
-
-  
-@endsection
 @section('content')
-
-
-    <!-- Hero Section -->
-    <section class="bg-white py-16">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-4">Bienvenido a la Plataforma de Certificados</h1>
-            <p class="text-lg text-gray-500 mb-8">Genera y consulta tus certificados de cursos en línea</p>
-    
-            <div class="flex flex-col items-center space-y-8">
-                <div class="p-4 rounded-md">
-                    <form action="" method="GET" class="flex flex-col items-center md:items-start md:flex-row space-y-4 md:space-x-4">
-                        @csrf
-                        <div class="w-64 md:w-auto flex-1">
-                            <input type="text" name="dni" class="w-full py-2 px-4 rounded-lg" placeholder="Ingresa tu DNI o Carnet de Identidad">
-                        </div>
-                        <button type="submit" class="bg-green-500 text-white w-full md:w-auto px-4 py-2 rounded-lg hover:bg-green-600">Buscar</button>
-                    </form>
-                </div>
-                <!-- Espacio adicional debajo del formulario -->
-                {{-- <div class="h-8"></div> --}}
-            </div>
-            
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="clearfix">
+    <div class="container" data-aos="fade-up">
+        <div class="hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/hero-img.svg" alt="" class="img-fluid">
         </div>
-        
-        
-    </section>
-    <div class="bg-gradient-to-b from-white to-green-200 p-8 rounded-md text-center w-full max-h-100">
-                   
+        <div class="hero-info" data-aos="zoom-in" data-aos-delay="100">
+            <h2>Consulta<br><span>El Certificado</span><br>de tu curso</h2>
+            <div>
+                <form action="" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="ci" class="form-control input-search" placeholder="Ingresa tu Carnet de Identidad">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default btn-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
+</section><!-- End Hero Section -->
+<!-- ======= About Section ======= -->
+<section id="about">
+    <div class="container" data-aos="fade-up">
 
+        <header class="section-header">
+            <h3>Acerca de Nosotros</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </header>
 
+        <div class="row about-container">
+
+            <div class="col-lg-6 content order-lg-1 order-2">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="bi bi-card-checklist"></i></div>
+                <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="bi bi-brightness-high"></i></div>
+                <h4 class="title"><a href="">Magni Dolores</a></h4>
+                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="bi bi-calendar4-week"></i></div>
+                <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
+
+            </div>
+
+            <div class="col-lg-6 background order-lg-2" data-aos="zoom-in">
+                <img src="assets/img/about-img.svg" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section><!-- End About Section -->
+    <!-- ======= Services Section ======= -->
+<section id="services" class="section-bg">
+    <div class="container" data-aos="fade-up">
+        <header class="section-header">
+            <h3>Nuestros Servicios</h3>
+            <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+        </header>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                    <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
+                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="box">
+                    <div class="icon"><i class="bi bi-card-checklist" style="color: #e9bf06;"></i></div>
+                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                    <div class="icon"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
+                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="box">
+                    <div class="icon"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
+                    <h4 class="title"><a href="">Magni Dolores</a></h4>
+                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section><!-- End Services Section -->
 
     <!-- Services Section -->
     <section class="bg-gray-100 py-16">

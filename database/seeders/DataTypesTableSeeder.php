@@ -89,7 +89,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'people',
-                'updated_at' => '2023-10-20 14:13:06',
+                'updated_at' => '2023-10-24 18:31:32',
             ),
             4 => 
             array (
@@ -107,7 +107,25 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'courses',
-                'updated_at' => '2023-10-23 20:17:01',
+                'updated_at' => '2023-10-24 18:19:45',
+            ),
+            5 => 
+            array (
+                'controller' => NULL,
+                'created_at' => '2023-10-24 13:00:38',
+                'description' => NULL,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'display_name_plural' => 'Fonts',
+                'display_name_singular' => 'Font',
+                'generate_permissions' => 1,
+                'icon' => NULL,
+                'id' => 11,
+                'model_name' => 'App\\Models\\Font',
+                'name' => 'fonts',
+                'policy_name' => NULL,
+                'server_side' => 0,
+                'slug' => 'fonts',
+                'updated_at' => '2023-10-24 13:00:38',
             ),
         ));
         
