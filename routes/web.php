@@ -15,7 +15,7 @@ use App\Http\Controllers\Voyager\CourseController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
