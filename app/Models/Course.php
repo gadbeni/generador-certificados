@@ -18,4 +18,9 @@ class Course extends Model
     {
         return $this->belongsToMany(Person::class, 'course_person', 'course_id', 'person_id');
     }
+    public function font()
+    {
+        return $this->belongsTo(Font::class, 'font_id');
+    }
+
 }

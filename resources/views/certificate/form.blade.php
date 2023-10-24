@@ -39,10 +39,20 @@
                                 <label for="range_x">Eje X:</label>
                                 <input type="range" name="range_x" id="range_x" class="" min="0" max="1000" step="1" value="0">
                             </div>
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-sm-6">
+                                <label for="fonts">Tipo de letra</label>
+                                <select name="fonts" id="fonts" class="form-control" required>
+                                    <option value="">..Elejir fuente</option>
+                                    @foreach ($fonts as $font)
+                                        <option value="{{$font->id}}">{{ $font->font_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
                                 <label for="range_y">Eje Y:</label>
                                 <input type="range" name="range_y" id="range_y" class="l" min="0" max="720" step="1" value="0">
                             </div>
+                            
                             <div class="form-group col-md-12">
                                 <label for="range_size">Tamaño Letra:</label>
                                 <input type="range" name="range_size" id="range_size" class="l" min="8" max="120" step="1" value="32">
@@ -66,6 +76,10 @@
 @endsection
 @section('css')
     <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+        @foreach($fonts as $font)
+            @import url({{$font->font_url}});
+        @endforeach
         /* .container-certificate {
             position: relative;
             width: 200px;
@@ -121,13 +135,14 @@
 
 @endsection
 <script>
+    var fonts = @json($fonts);
+    console.log(fonts)
     document.addEventListener("DOMContentLoaded", function() {
-        const xInput = document.getElementById("eje_x");
-        const yInput = document.getElementById("eje_y");
-
+        //selecciona los rangos
         const rangeX = document.getElementById("range_x");
         const rangeY = document.getElementById("range_y");
         const rangeSize = document.getElementById("range_size");
+        const fontSelect = document.getElementById("fonts");
 
         const movableDiv = document.getElementById("movable-div");
 
@@ -136,14 +151,15 @@
         const btnAjustar = document.getElementById("btn_ajustar");
         const panelParent = document.getElementById("panel_parent")
 
-        console.log(xInput);
-
+        //eventos 
         rangeX.addEventListener("input", updatePositionX);
         rangeY.addEventListener("input", updatePositionY);
         rangeSize.addEventListener("input", updateFontSize);
+        fontSelect.addEventListener("change",updateFontFamily);
 
-        btnAjustar.addEventListener("click",togglePanel)
+        btnAjustar.addEventListener("click",togglePanel);
 
+        //cambiar imagen
         imageInput.addEventListener("change",function(){
             const file = imageInput.files[0];
             if(file){
@@ -153,7 +169,15 @@
                 container.style.backgroundImage = "none";
             }
         });
+        //funciones
+        function updateFontFamily() {
+            const selectedFontId = fontSelect.value;
+            const selectedFont = fonts.find(font => font.id == selectedFontId)
 
+            if (selectedFont){
+                movableDiv.style.fontFamily = selectedFont.font_name
+            }
+        }
         function togglePanel(){
             
         }

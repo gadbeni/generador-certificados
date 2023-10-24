@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\App;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use App\Models\Course;
 use App\Models\Person;
+use App\Models\Font;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class CourseController extends VoyagerBaseController
@@ -18,16 +19,20 @@ class CourseController extends VoyagerBaseController
     public function formCertificate(Request $request,$id_course)
     {
         $course = Course::find($id_course);
-        return view('certificate.form',compact('course'));
+        $fonts = Font::all();
+        return view('certificate.form',compact('course','fonts'));
     }
 
     public function addCertificate(Request $request, $id_course)
     {
         $course = Course::find($id_course);
-        // dd($course->course_name);
+        $font = Font::find($request->fonts);
+
+        // dd($font->font_name);
         $course->x = $request->range_x;
         $course->y = $request->range_y;
         $course->font_size = $request->range_size;
+        $course->font()->associate($font);
         if($request->hasFile("image")){
             $img =  $request->file('image');
             $img_name = Str::slug($request->image).".".$img->guessExtension();
