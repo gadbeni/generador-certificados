@@ -8,7 +8,36 @@
             <i class="voyager-certificate"></i>
             Certificado
         </h1>
-        <button class="btn btn-primary" id="btn_ajustar">Ajustar Nombre</button>
+        <button class="btn btn-primary" id="btn_ajustar">Añadir Certificado</button>
+    </div>
+    <div class="container-fluid">
+        <div class="panel panel-bordered">
+            <div class="panel-body">
+                {{--  --}}
+                <form action="{{ route('update_certificate_status', $course->id) }}" method="POST" style="">
+                    @csrf
+                    @method('PUT')
+                    @if ($course->certificate_delivered)
+                    <div class="alert alert-success">
+                        <strong>Éstado:</strong> Los certificados ya se han entregado.
+                    </div>                   
+                    @else
+                    <div class="alert alert-warning">
+                        <strong>Estado: </strong> Los certificados aun no se han entregado.
+                    </div> 
+                    @endif
+
+                    <div class="form-check">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="certificateDelivered" name="certificate_delivered" {{ $course->certificate_delivered ? 'checked' : '' }}>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>                
+            </div>
+        </div>
     </div>
     <div class="container-fluid">
         <div class="panel panel-bordered hidden" id="panel_parent">
@@ -146,6 +175,67 @@
             font-family: 'Times New Roman', Times, serif;
             font-weight: 700;
         }
+    </style>
+    <style>
+        /* Estilos para el contenedor del Toggle Switch */
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Estilos para el fondo del Toggle Switch (no seleccionado) */
+    .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* Estilos para el control deslizante */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    /* Estilos para el control deslizante cuando está activado */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    /* Estilos para el control deslizante (el punto) */
+    .slider.round::before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    /* Estilos para el Toggle Switch cuando está activado */
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    /* Estilos para el punto cuando el Toggle Switch está activado */
+    input:checked + .slider::before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
     </style>
 
     

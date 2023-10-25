@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::controller(CourseController::class)->group(function(){
         Route::get('courses/{id_course}/certificate/','formCertificate')->name('form_certificate');
         Route::put('courses/{id_course}/add-certificate/','addCertificate')->name('add_certificate');
+        Route::put('courses/{id_course}/Status-certificate/','updateCertificateStatus')->name('update_certificate_status');
         Route::get('courses/{id_course}/certificate/{id_person}','showCertificate')->name('show_certificate');
     });
     

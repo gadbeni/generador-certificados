@@ -16,10 +16,11 @@ class PersonController extends VoyagerBaseController
         $person =  Person::where('ci',$request->ci)->first();
 
         if($person){
-            $courses = $person->courses;
+            $courses = $person->courses->where('certificate_delivered', true);
             return view('home',compact('person','courses'));
         }
         $person = null;
-        return view('home',compact('person'));
+        $courses = null;
+        return view('home',compact('person','courses'));
     }
 }

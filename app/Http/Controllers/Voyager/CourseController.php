@@ -45,6 +45,18 @@ class CourseController extends VoyagerBaseController
 
         return redirect()->route('form_certificate', $id_course);
     }
+    public function updateCertificateStatus(Request $request,$id_course)
+    {
+        $course = Course::find($id_course);
+
+        $course->update([
+            'certificate_delivered' => $request->has('certificate_delivered'),
+            'certificate_date' => $request->has('certificate_delivered') ? now() : null,
+        ]);
+
+        return redirect()->route('form_certificate', $course->id);
+    }
+
     public function showCertificate(Request $request,$id_course,$id_person){
         $course = Course::find($id_course);
         $person = Person::find($id_person);

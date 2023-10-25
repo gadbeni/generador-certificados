@@ -12,6 +12,8 @@ class Course extends Model
         'img_certificate',
         'x',
         'y',
+        'certificate_delivered',
+        'certificate_date',
         // Otros campos aquí
     ];
     public function students()

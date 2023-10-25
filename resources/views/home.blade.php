@@ -42,6 +42,10 @@
                 </div>
             </div>
             @endforeach
+        @else
+            <div class="card mb-3 border-success">
+                <p>Aun no tienes certificados</p>
+            </div>
         @endif
         </div>
     </div>
