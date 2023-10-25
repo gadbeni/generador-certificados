@@ -18,6 +18,7 @@
   --color-info: #007bff;
   --color-info-200:#004289;
   --color-dark-100: #2f2f2f;
+  --bg-color-grandient: #e8fded ;
 }
 
 body {
@@ -1503,4 +1504,9 @@ section {
 
 #footer .credits a:hover {
   color: #f1f7ff;
+}
+
+#section-certificate .card:hover{
+  scale: 1.05;
+  background: linear-gradient(180deg,#fff 10%,#fff 60%,var(--bg-color-grandient) 98%);
 }

@@ -54,4 +54,5 @@ class CourseController extends VoyagerBaseController
         // return $pdf->setPaper('a4', 'landscape')->setWarnings(false)->stream('certificado'.time().'.pdf');
         return view('pdf.certificate', compact('course', 'person'));
     }
+
 }

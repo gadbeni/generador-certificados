@@ -25,6 +25,28 @@
         </div>
     </div>
 </section><!-- End Hero Section -->
+@if ($person)
+<section id="section-certificate" data-aos="fade-up">
+    <div class="container mt-5 mb-5">
+        <header class="section-header">
+            <h3><i class="fa fa-address-book me-2"></i>{{$person->first_name}} {{$person->last_name}}</h3>
+            <p>Listado de certificados</p>
+        </header>
+        <div class="d-flex justify-content-center flex-column">
+        @if ($courses)
+            @foreach ($courses as $course)
+            <div class="card mb-3 border-success" style="">
+                <div class="card-body text-center">
+                    <h4 class="pt-3"><i class="fa fa-file-text me-2"></i>{{$course->course_name}}</h4>
+                    <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $person->id]) }}" class="btn btn-success">Ver certificado</a>
+                </div>
+            </div>
+            @endforeach
+        @endif
+        </div>
+    </div>
+</section>
+@endif
 <!-- ======= About Section ======= -->
 <section id="about">
     <div class="container" data-aos="fade-up">

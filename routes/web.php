@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Voyager\CourseController;
+use App\Http\Controllers\Voyager\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,13 @@ use App\Http\Controllers\Voyager\CourseController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
+Route::controller(PersonController::class)->group(function(){
+    Route::get('/','findPerson')->name('home');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

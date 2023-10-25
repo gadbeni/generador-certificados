@@ -28,7 +28,7 @@
                         <form action="{{route('add_certificate', $course->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="form-group col-md-12 hidden">
+                            <div class="form-group col-sm-6">
                                 <label for="image">Selecciona una imagen:</label>
                                 <input type="file" name="image" id="image" accept="image/*">
                             </div>
@@ -45,7 +45,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group col-sm-6">
+                            <div class="form-group col-md-12">
                                 <label for="range_y">Eje Y:</label>
                                 <input type="range" name="range_y" id="range_y" class="l" min="0" max="720" step="1" value="0">
                             </div>

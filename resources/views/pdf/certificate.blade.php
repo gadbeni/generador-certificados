@@ -10,8 +10,12 @@
     
     </div>
 </div>
+
 <style>
-    @import url({{$course->font->font_url}});
+    /* @if ($course->font) */
+    @import url({{$course->font->font_url}});    
+    /* @endif */
+
     *{
         margin: 0;
         padding: 0;
@@ -43,7 +47,9 @@
     #movable-div p{
         text-align: center;
         font-size: {{$course->font_size}}px;
+        /* @if ($course->font) */
         font-family: {{$course->font->font_name}};
+        /* @endif */
     }
 </style>
 <script>
