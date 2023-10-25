@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name')->required();
-            $table->string('last_name')->required();
+            $table->string('full_name')->required();
             $table->string('ci')->required();
             $table->string('email')->nullable();
             $table->string('phone_number')->nullable();

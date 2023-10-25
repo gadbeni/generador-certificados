@@ -15,9 +15,9 @@ class Person extends Model
     {
         return $this->belongsToMany(Course::class, 'course_person', 'person_id', 'course_id');
     }
-    public function getFullNameAttribute()
-    {
-        return "{$this->first_name} {$this->last_name}";
-    }
-    public $additional_attributes = ['full_name'];
+    // public function getFullNameAttribute()
+    // {
+    //     return "{$this->first_name} {$this->last_name}";
+    // }
+    // public $additional_attributes = ['full_name'];
 }

@@ -97,8 +97,7 @@
                     <table id="dataTable" class="table table-hover dataTable" role="grid" aria-describedby="dataTable_info">
                         <thead>
                             <tr class="">
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
+                                <th>Nombre Completo</th>
                                 <th>CI</th>
                                 <th>Certificado</th>
                             </tr>
@@ -106,8 +105,7 @@
                         <tbody>
                             @foreach ($course->students as $student)
                             <tr role="row" class="odd">
-                                <td>{{ $student->first_name }}</td>
-                                <td>{{ $student->last_name }}</td>
+                                <td>{{ $student->full_name }}</td>
                                 <td>{{ $student->ci }}</td>
                                 <td>
                                     <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $student->id]) }}" class="btn btn-primary">

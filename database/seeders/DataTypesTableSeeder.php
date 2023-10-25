@@ -89,7 +89,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'people',
-                'updated_at' => '2023-10-24 18:31:32',
+                'updated_at' => '2023-10-25 22:07:43',
             ),
             4 => 
             array (
@@ -107,7 +107,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'courses',
-                'updated_at' => '2023-10-24 18:19:45',
+                'updated_at' => '2023-10-25 22:17:43',
             ),
             5 => 
             array (

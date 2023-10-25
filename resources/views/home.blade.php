@@ -29,7 +29,7 @@
 <section id="section-certificate" data-aos="fade-up">
     <div class="container mt-5 mb-5">
         <header class="section-header">
-            <h3><i class="fa fa-address-book me-2"></i>{{$person->first_name}} {{$person->last_name}}</h3>
+            <h3><i class="fa fa-address-book me-2"></i>{{$person->full_name}}</h3>
             <p>Listado de certificados</p>
         </header>
         <div class="d-flex justify-content-center flex-column">

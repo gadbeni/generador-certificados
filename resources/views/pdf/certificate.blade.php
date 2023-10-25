@@ -4,7 +4,7 @@
         <img src="{{asset("storage/"."$course->img_certificate")}}" alt="">
         {{-- <img src="https://previews.123rf.com/images/kitipol/kitipol1609/kitipol160900173/63887549-plantilla-de-certificado-diploma-dise%C3%B1o-tama%C3%B1o-a4-vector.jpg" alt=""> --}}
         <div id="movable-div">
-            <p>{{$person->first_name}} {{$person->last_name}}</p>
+            <p>{{$person->full_name}}</p>
         
         </div>
     
