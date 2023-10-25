@@ -11,7 +11,9 @@
 --------------------------------------------------------------*/
 :root{
   --color-primary: #098429;
+  --color-primary-90: #2bd659;
   --color-primary-100:#11aa3a;
+  --color-primary-190: #033911;
   --color-primary-200: #012009;
   --color-info: #007bff;
   --color-info-200:#004289;
@@ -65,7 +67,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #007bff;
+  background: var(--color-primary-100);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -79,7 +81,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #2990ff;
+  background: var(--color-primary-90);
   color: #fff;
 }
 
@@ -456,8 +458,8 @@ h6 {
 }
 
 #hero .hero-info .btn-services:hover {
-  background: #007bff;
-  border-color: #007bff;
+  background: var(--color-primary-100);
+  border-color: var(--color-primary-100);
   color: #fff;
 }
 #hero .input-search{
@@ -616,18 +618,18 @@ section {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 2px solid #007bff;
+  border: 2px solid var(--color-primary-100);
   transition: all 0.3s ease-in-out;
 }
 
 #about .about-container .icon-box .icon i {
-  color: #007bff;
+  color: var(--color-primary-100);
   font-size: 24px;
   line-height: 0;
 }
 
 #about .about-container .icon-box:hover .icon {
-  background: #007bff;
+  background: var(--color-primary-100);
 }
 
 #about .about-container .icon-box:hover .icon i {
@@ -706,7 +708,7 @@ section {
 }
 
 #services .box:hover .title a {
-  color: #007bff;
+  color: var(--color-primary-100);
 }
 
 #services .description {
@@ -718,7 +720,7 @@ section {
 
 #why-us {
   padding: 60px 0;
-  background: #004a99;
+  background: var(--color-primary-200);
 }
 
 #why-us .section-header h3,
@@ -727,8 +729,8 @@ section {
 }
 
 #why-us .card {
-  background: #00458f;
-  border-color: #00458f;
+  background: var(--color-primary-200);
+  border-color: var(--color-info-200);
   border-radius: 10px;
   margin: 0 15px;
   padding: 15px 0;
@@ -745,8 +747,8 @@ section {
 }
 
 #why-us .card:hover {
-  background: #003b7a;
-  border-color: #003b7a;
+  background: var(--color-primary-200);
+  border-color: var(--color-primary-200);
 }
 
 #why-us .card i {
@@ -770,7 +772,7 @@ section {
   font-weight: 600;
   display: inline-block;
   transition: 0.3s ease-in-out;
-  border-bottom: #00458f solid 2px;
+  border-bottom: var(--color-primary-200) solid 2px;
 }
 
 #why-us .card .readmore:hover {
@@ -1318,7 +1320,7 @@ section {
 
 #contact .php-email-form input:focus,
 #contact .php-email-form textarea:focus {
-  border-color: #007bff;
+  border-color: var(--color-primary-100);
 }
 
 #contact .php-email-form input {
@@ -1330,7 +1332,7 @@ section {
 }
 
 #contact .php-email-form button[type=submit] {
-  background: #007bff;
+  background: var(--color-primary-100);
   border: 0;
   border-radius: 20px;
   padding: 8px 30px;
@@ -1339,7 +1341,7 @@ section {
 }
 
 #contact .php-email-form button[type=submit]:hover {
-  background: #0067d5;
+  background: var(--color-primary-90);
   cursor: pointer;
 }
 
@@ -1357,14 +1359,14 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #00428a;
+  background: var(--color-primary-190);
   padding: 0 0 30px 0;
   color: #eee;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: #004a99;
+  background: var(--color-primary);
   padding: 60px 0 30px 0;
 }
 
@@ -1397,7 +1399,7 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #007bff;
+  background: var(--color-primary-100);
   color: #fff;
   margin-right: 4px;
   border-radius: 50%;
@@ -1412,7 +1414,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #0067d5;
+  background: var(--color-primary-90);
   color: #fff;
 }
 
@@ -1448,7 +1450,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #74b5fc;
+  color: var(--color-primary-90);
 }
 
 #footer .footer-top .footer-contact {
@@ -1470,7 +1472,7 @@ section {
 }
 
 #footer .footer-top .footer-newsletter input[type=submit] {
-  background: #007bff;
+  background: var(--color-primary-100);
   border: 0;
   width: 35%;
   padding: 6px 0;
@@ -1481,7 +1483,7 @@ section {
 }
 
 #footer .footer-top .footer-newsletter input[type=submit]:hover {
-  background: #0062cc;
+  background: var(--color-primary-190);
 }
 
 #footer .copyright {

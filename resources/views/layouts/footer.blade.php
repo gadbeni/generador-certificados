@@ -5,29 +5,31 @@
             <div class="row">
 
                 <div class="col-lg-4 col-md-6 footer-info">
-                    <h3>NewBiz</h3>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                    <h3>Gobernación del Beni</h3>
+                    <p>
+                        Es la entidad encargada de coordinar y gestionar asuntos departamentales en la región del Beni, abarcando áreas esenciales como educación, salud, desarrollo económico y conservación del medio ambiente. Su labor es fundamental para el bienestar de la población beniana.
+                    </p>
                 </div>
 
                 <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>Useful Links</h4>
+                    <h4>Enlaces Útiles</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#">Terminos y condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <h4>Contact Us</h4>
+                    <h4>Contáctanos</h4>
                     <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        Plaza Principal, Acera Sur <br>
+                        Trinidad - Beni - Bolivia<br>
+                        Estado Plurinacional de Bolivia<br>
+                        {{-- <strong>Telefono:</strong> +1 5589 55488 55<br> --}}
+                        <strong>Email:</strong> despacho@beni.gob.bo<br>
                     </p>
 
                     <div class="social-links">
@@ -41,10 +43,12 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-newsletter">
-                    <h4>Our Newsletter</h4>
-                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                    <h4>Más información</h4>
+                    <p>
+                        Le invitamos a suscribirse utilizando su dirección de correo electrónico. De esta manera, podrá estar al tanto de las últimas novedades y recibir actualizaciones directamente en su bandeja de entrada.
+                    </p>
                     <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                        <input type="email" name="email"><input type="submit" value="Suscribete">
                     </form>
                 </div>
 
@@ -54,7 +58,7 @@
 
     <div class="container">
         <div class="copyright">
-        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+        &copy; Copyright <strong>GAD BENI</strong>. Derechos Reservados
         </div>
         <div class="credits">
         <!--
@@ -63,7 +67,7 @@
         Licensing information: https://bootstrapmade.com/license/
         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Unidad de <a href="">Sistemas</a>
         </div>
     </div>
 </footer><!-- End Footer -->
