@@ -16,13 +16,17 @@ class PersonController extends VoyagerBaseController
         if ($request->ci) {
             $person =  Person::where('ci',$request->ci)->first();
             if($person){
-                $courses = $person->courses->where('certificate_delivered', true)->sortByDesc('certificate_date');;
-                return view('home',compact('person','courses'));
+                $courses = $person->courses->where('certificate_delivered', true)->sortByDesc('certificate_date');
+                if ($courses->count() > 0) {
+                    return view('home',compact('person','courses'));
+                }
+                $courses = null;
+                return view('home',compact('person','courses'))->with('error_course', 'Aun no tienes Certificados');
             }
             else{
                 $person = null;
                 $courses = null;
-                return view('home',compact('person','courses'))->with('error', 'Persona No encontrada.');;
+                return view('home',compact('person','courses'))->with('error', 'Persona No encontrada.');
             }
         }
        

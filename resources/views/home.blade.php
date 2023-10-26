@@ -11,7 +11,7 @@
         <div class="hero-info" data-aos="zoom-in" data-aos-delay="100">
             <h2>Consulta<br><span>El Certificado</span><br>de tu curso</h2>
             <div>
-                <form action="" method="GET">
+                <form action="{{route('home')}}#section-certificate" method="GET">
                     <div class="input-group">
                         <input type="text" name="ci" class="form-control input-search" placeholder="Ingresa tu Carnet de Identidad">
                         <div class="input-group-btn">
@@ -42,6 +42,11 @@
             <p>Listado de certificados</p>
         </header>
         <div class="d-flex justify-content-center flex-column">
+        @if (isset($error_course))
+            <div class="alert alert-danger mt-3 mb-3">
+                {{ $error_course}}
+            </div>
+        @endif
         @if ($courses)
             @foreach ($courses as $course)
             <div class="card mb-3 border-success" style="">
@@ -51,10 +56,6 @@
                 </div>
             </div>
             @endforeach
-        @else
-            <div class="card mb-3 border-success">
-                <p>Aun no tienes certificados</p>
-            </div>
         @endif
         </div>
     </div>
@@ -136,4 +137,3 @@
     </div>
 </section><!-- End Services Section -->
 @endsection
-
