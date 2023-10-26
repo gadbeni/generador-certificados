@@ -16,7 +16,7 @@ class PersonController extends VoyagerBaseController
         if ($request->ci) {
             $person =  Person::where('ci',$request->ci)->first();
             if($person){
-                $courses = $person->courses->where('certificate_delivered', true);
+                $courses = $person->courses->where('certificate_delivered', true)->sortByDesc('certificate_date');;
                 return view('home',compact('person','courses'));
             }
             else{

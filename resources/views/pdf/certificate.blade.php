@@ -1,15 +1,17 @@
-
-<div class="table-responsive">
-    <div class="container-certificate" id="container-certificate">
-        <img src="{{asset("storage/"."$course->img_certificate")}}" alt="">
-        {{-- <img src="https://previews.123rf.com/images/kitipol/kitipol1609/kitipol160900173/63887549-plantilla-de-certificado-diploma-dise%C3%B1o-tama%C3%B1o-a4-vector.jpg" alt=""> --}}
-        <div id="movable-div">
-            <p>{{$person->full_name}}</p>
+<div class="" id="container">
+    <div class="table-responsive">
+        <div class="container-certificate" id="container-certificate">
+            <img src="{{asset("storage/"."$course->img_certificate")}}" alt="">
+            {{-- <img src="https://previews.123rf.com/images/kitipol/kitipol1609/kitipol160900173/63887549-plantilla-de-certificado-diploma-dise%C3%B1o-tama%C3%B1o-a4-vector.jpg" alt=""> --}}
+            <div id="movable-div">
+                <p id="text_name">{{$person->full_name}}</p>
+            
+            </div>
         
         </div>
-    
     </div>
 </div>
+
 
 <style>
     /* @if ($course->font) */
@@ -19,6 +21,10 @@
     *{
         margin: 0;
         padding: 0;
+    }
+    .container-flex{
+        display: flex;
+        justify-content: center
     }
     .container-certificate {
         position: relative;
@@ -51,21 +57,41 @@
         font-family: {{$course->font->font_name}};
         /* @endif */
     }
+    @page {
+        size:landscape;
+        margin: 0mm 0mm 0mm 0mm;
+    }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const movableDiv = document.getElementById("movable-div");
         console.log("hola");
         const container = document.getElementById("container-certificate");
+        const textName = document.getElementById("text_name");
         /* container.style.backgroundImage = ``; */
 
-        /* movableDiv.style.transform = `translateX(${x}px) translateY(${rangeY.value}px)`; */
-        
+        // Landscape export, 2×4 inches
+
+
+        html2canvas(container).then(function(canvas) {
+            const image = new Image();
+            image.src = canvas.toDataURL('image/png');
+
+            const pdfOptions = {
+                margin: 0,
+                filename: 'certificado.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' } // Configurar la orientación a 'landscape'
+            };
+            html2pdf(image, pdfOptions);
+            // Agrega la imagen al DOM o guarda la imagen en el servidor, según tus necesidades
+            document.body.appendChild(image);
+            container.remove();
+        });
+            
     });
-    function convertBackslashesToSlashes(inputText) {
-        /* // Utiliza el método replace con una expresión regular para reemplazar todas las barras invertidas por barras inclinadas */
-        var outputText = inputText.replace(/\\/g, '/');
-        return outputText;
-    }
 
 </script>
