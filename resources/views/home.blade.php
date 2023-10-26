@@ -25,6 +25,15 @@
         </div>
     </div>
 </section><!-- End Hero Section -->
+@if (isset($error))
+<section id="section-certificate" data-aos="fade-up">
+    <div class="container">
+        <div class="alert alert-danger mt-3 mb-3">
+            {{ $error }}
+        </div>
+    </div>
+</section>
+@endif
 @if ($person)
 <section id="section-certificate" data-aos="fade-up">
     <div class="container mt-5 mb-5">
