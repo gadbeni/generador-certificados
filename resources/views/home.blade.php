@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','SysCertificate')
+@section('title','Certificados')
 @section('content')
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="clearfix">
