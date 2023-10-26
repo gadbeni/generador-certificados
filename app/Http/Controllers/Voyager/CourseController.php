@@ -39,6 +39,11 @@ class CourseController extends VoyagerBaseController
             $img =  $request->file('image');
             $img_name = Str::slug($request->image).".".$img->guessExtension();
             $path = public_path('storage/courses/');
+
+            if (!file_exists($path)) {
+                mkdir($path, 0755, true);
+            }
+
             copy($img->getRealPath(),$path.$img_name);
             $course->img_certificate = "courses/".$img_name; 
         }

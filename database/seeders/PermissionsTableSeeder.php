@@ -38,5 +38,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('people');
         Permission::generateFor('courses');
         Permission::generateFor('course_person');
+        Permission::generateFor('fonts');
     }
 }
