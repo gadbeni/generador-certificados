@@ -38,7 +38,7 @@
             <div class="card mb-3 border-success" style="">
                 <div class="card-body text-center">
                     <h4 class="pt-3"><i class="fa fa-file-text me-2"></i>{{$course->course_name}}</h4>
-                    <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $person->id]) }}" class="btn btn-success">Ver certificado</a>
+                    <a href="{{ route('show_certificate_user', ['id_course' => $course->id, 'id_person' => $person->id]) }}" class="btn btn-success">Ver certificado</a>
                 </div>
             </div>
             @endforeach

@@ -13,6 +13,8 @@ use App\Models\Person;
 use App\Models\Font;
 use Barryvdh\DomPDF\Facade\Pdf;
 
+use App\Policies\CoursePolicy;
+
 class CourseController extends VoyagerBaseController
 {
     //
@@ -56,11 +58,26 @@ class CourseController extends VoyagerBaseController
 
         return redirect()->route('form_certificate', $course->id);
     }
-
+    /* Metod para el administrador vea los certificados */
     public function showCertificate(Request $request,$id_course,$id_person){
         $course = Course::find($id_course);
         $person = Person::find($id_person);
 
+        // $pdf = Pdf::loadView('pdf.certificate',compact('person','course'));
+        // return $pdf->setPaper('a4', 'landscape')->setWarnings(false)->stream('certificado'.time().'.pdf');
+        return view('pdf.certificate', compact('course', 'person'));
+    }
+    /* Metodo para que los usuarios con su numero de carnet vean el certificado */
+    public function showCertificateUser(Request $request,$id_course,$id_person){
+
+        $course = Course::find($id_course);
+        $person = Person::find($id_person);
+        
+        /* La idea era hacerlo con una politica pero nose por que no funciona */
+        // $this->authorize('show', $course);
+        if (!$course->certificate_delivered) {
+           return redirect()->route('home'); 
+        }
 
         // $pdf = Pdf::loadView('pdf.certificate',compact('person','course'));
         // return $pdf->setPaper('a4', 'landscape')->setWarnings(false)->stream('certificado'.time().'.pdf');
