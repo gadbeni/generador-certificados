@@ -42,5 +42,5 @@ Route::group(['prefix' => 'admin'], function () {
 
 //publico
 Route::controller(CourseController::class)->group(function(){
-    Route::get('courses/{id_course}/certificate/{id_person}','showCertificateUser')->name('show_certificate_user');
+    Route::post('courses/{id_course}/certificate/{id_person}','showCertificateUser')->name('show_certificate_user');
 });
