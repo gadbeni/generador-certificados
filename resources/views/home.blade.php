@@ -6,7 +6,7 @@
 <section id="hero" class="clearfix">
     <div class="container" data-aos="fade-up">
         <div class="hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/hero-img.svg" alt="" class="img-fluid">
+            <img src="" alt="" class="img-fluid">
         </div>
         <div class="hero-info" data-aos="zoom-in" data-aos-delay="100">
             <h2>Consulta<br><span>El Certificado</span><br>de tu curso</h2>
