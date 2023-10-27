@@ -54,7 +54,7 @@
                     <h4 class="pt-3"><i class="fa fa-file-text me-2"></i>{{$course->course_name}}</h4>
                     <form method="post" action="{{ route('show_certificate_user', ['id_course' => $course->id, 'id_person' => $person->id]) }}">
                         @csrf
-                        <button type="submit" class="btn btn-success">Ver certificado</button>
+                        <button type="submit" class="btn btn-success">Descargar certificado</button>
                     </form>
                     
                 </div>
