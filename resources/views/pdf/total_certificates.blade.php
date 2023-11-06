@@ -68,6 +68,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     const participants = @json($participants);
+    const course = @json($course);
     document.addEventListener("DOMContentLoaded", function() {
         const movableDiv = document.getElementById("movable-div");
         console.log(participants);
@@ -94,13 +95,16 @@
             `;
             gran_container.appendChild(certificateContainer);
         });
+
+        const modifiedName = course.course_name.replace(/\s+/g, '_');
+
         html2canvas(gran_container).then(function(canvas) {
             const image = new Image();
             image.src = canvas.toDataURL('image/png');
 
             const pdfOptions = {
                 margin: 0,
-                filename: 'certificados.pdf',
+                filename: `Certificados_${modifiedName}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' } // Configurar la orientación a 'landscape'
