@@ -89,4 +89,25 @@ class CourseController extends VoyagerBaseController
         return view('pdf.certificate', compact('course', 'person'));
     }
 
+    public function totalCertificates(Request $request,$id_course){
+
+        $course = Course::find($id_course);
+        $people = $course->students;
+        
+        $participants = [];
+        foreach ($people as $person) {
+            $participant = [
+                'name' => $person->full_name
+            ];
+            $participants[] = $participant;
+        }
+        // dd($participants);
+
+        // if (!$course->certificate_delivered) {
+        //    return redirect()->route('home'); 
+        // }
+
+        return view('pdf.total_certificates', compact('course', 'participants'));
+    }
+
 }

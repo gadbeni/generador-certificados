@@ -13,7 +13,7 @@
             <div>
                 <form action="{{route('home')}}#section-certificate" method="GET">
                     <div class="input-group">
-                        <input type="text" name="ci" class="form-control input-search" placeholder="Ingresa tu Carnet de Identidad">
+                        <input type="text" name="search" class="form-control input-search" placeholder="Ingresa tu CI o Nombre Completo">
                         <div class="input-group-btn">
                             <button type="submit" class="btn btn-default btn-search">
                                 <i class="fa fa-search"></i>

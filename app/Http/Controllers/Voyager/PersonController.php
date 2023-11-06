@@ -13,8 +13,14 @@ class PersonController extends VoyagerBaseController
 {
     //
     public function findPerson(Request $request){
-        if ($request->ci) {
-            $person =  Person::where('ci',$request->ci)->first();
+        if ($request->search) {
+            $search = $request->search;
+            $query = Person::query();
+            $query->orWhere('ci',$search);
+            $query->orWhere('full_name','LIKE','%'.$search.'%');
+
+            $person = $query->first();
+            // $person =  Person::where('ci',$request->ci)->first();
             if($person){
                 $courses = $person->courses->where('certificate_delivered', true)->sortByDesc('certificate_date');
                 if ($courses->count() > 0) {

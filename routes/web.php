@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('courses/{id_course}/add-certificate/','addCertificate')->name('add_certificate');
         Route::put('courses/{id_course}/Status-certificate/','updateCertificateStatus')->name('update_certificate_status');
         Route::get('courses/{id_course}/certificate/{id_person}','showCertificate')->name('show_certificate')->middleware('auth');
+        Route::get('courses/{id_course}/certificates/','totalCertificates')->name('total_certificates')->middleware('auth');
     });
     
     // certificados->

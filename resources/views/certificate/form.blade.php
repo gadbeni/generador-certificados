@@ -93,6 +93,9 @@
         </div>
         <div class="panel">
             <div class="panel-body">
+                {{-- <a href="{{ route('total_certificates', ['id_course' => $course->id]) }}" class="btn btn-primary">
+                    <i class="voyager-certificate"></i>Generar Todos
+                </a> --}}
                 <div class="table-responsive">
                     <table id="dataTable" class="table table-hover dataTable" role="grid" aria-describedby="dataTable_info">
                         <thead>
