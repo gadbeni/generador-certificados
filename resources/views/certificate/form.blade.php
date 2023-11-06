@@ -93,9 +93,9 @@
         </div>
         <div class="panel">
             <div class="panel-body">
-                {{-- <a href="{{ route('total_certificates', ['id_course' => $course->id]) }}" class="btn btn-primary">
+                <a href="{{ route('total_certificates', ['id_course' => $course->id]) }}" class="btn btn-primary" target="_blank">
                     <i class="voyager-certificate"></i>Generar Todos
-                </a> --}}
+                </a>
                 <div class="table-responsive">
                     <table id="dataTable" class="table table-hover dataTable" role="grid" aria-describedby="dataTable_info">
                         <thead>
@@ -111,7 +111,7 @@
                                 <td>{{ $student->full_name }}</td>
                                 <td>{{ $student->ci }}</td>
                                 <td>
-                                    <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $student->id]) }}" class="btn btn-primary">
+                                    <a href="{{ route('show_certificate', ['id_course' => $course->id, 'id_person' => $student->id]) }}" class="btn btn-primary" target="_blank">
                                         <i class="voyager-certificate"></i>
                                     </a>
                                 </td>
