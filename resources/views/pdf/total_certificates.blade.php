@@ -105,11 +105,11 @@
             const pdfOptions = {
                 margin: 0,
                 filename: `Certificados_${modifiedName}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' } // Configurar la orientación a 'landscape'
             };
-            html2pdf(image, pdfOptions);
+            html2pdf(gran_container, pdfOptions);
             // Agrega la imagen al DOM o guarda la imagen en el servidor, según tus necesidades
             document.body.appendChild(image);
             gran_container.remove();

@@ -84,11 +84,11 @@
             const pdfOptions = {
                 margin: 0,
                 filename: `certificado_c${course.id}_${modifiedName}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                image: { type: 'jpeg', quality: 1.0 },
+                html2canvas: { scale: 3 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' } // Configurar la orientación a 'landscape'
             };
-            html2pdf(image, pdfOptions);
+            html2pdf(container, pdfOptions);
             // Agrega la imagen al DOM o guarda la imagen en el servidor, según tus necesidades
             document.body.appendChild(image);
             container.remove();
